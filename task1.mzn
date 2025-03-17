@@ -1,0 +1,13 @@
+include "globals.mzn";
+var 1..9: M;
+var 1..9: I;
+var 0..9: P;
+var 0..9: T;
+var 0..9: N;
+var 0..9: O;
+var 0..9: L;
+var 0..9: S;
+constraint all_different([M, I, P, T, N, O, L, S]);
+constraint 1000*M + 100*I + 10*P + T + 1000*I + 100*N + 10*N + O = 10000*P + 1000*O + 100*L + 10*I + S;
+solve maximize 10000*P + 1000*O + 100*L + 10*I + S;
+output [ "M = " ++ show(M) ++ "\n" ++ "I = " ++ show(I) ++ "\n" ++ "P = " ++ show(P) ++ "\n" ++ "T = " ++ show(T) ++ "\n" ++ "N = " ++ show(N) ++ "\n" ++ "O = " ++ show(O) ++ "\n" ++ "L = " ++ show(L) ++ "\n" ++ "S = " ++ show(S) ];
